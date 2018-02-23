@@ -24,7 +24,6 @@
     ]
   },
   "devDependencies": {
-    "@types/applicationinsights-js": "^1.0.5",
     "@types/express": "^4.11.1",
     "@types/jest": "^21.1.2",
     "@types/node": "^9.4.6",

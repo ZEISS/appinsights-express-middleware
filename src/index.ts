@@ -3,10 +3,15 @@ import * as express from 'express';
 import * as uuid from 'uuid';
 import { Logger } from './logger';
 
-export const logger = (app: express.Application, instrumentationKey: string, disableAutoCollect: boolean = false) => {
-  const ai = appInsights.setup(instrumentationKey);
+export interface Options {
+  key: string;
+  disableAutoCollect?: boolean;
+}
 
-  if (disableAutoCollect) {
+export const logger = (app: express.Application, options: Options) => {
+  const ai = appInsights.setup(options.key);
+
+  if (options.disableAutoCollect) {
     ai
       .setAutoCollectPerformance(false)
       .setAutoCollectConsole(false)

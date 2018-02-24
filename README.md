@@ -87,7 +87,7 @@ app.listen(3000, () => {
 
 #### server.js
 
-````js
+```js
 import { app } from './app';
 import * as http from 'http';
 
@@ -109,7 +109,7 @@ server.on('listening', listeningHandler);
 
 ## Logging API
 
-````typescript
+```typescript
 traceInfo(message: string, properties?: {[key: string]: string}): void;
 traceError(error: Error, message: string, properties?: {[key: string]: string}): void;
 traceWarning(message: string, properties?: {[key: string]: string}): void;

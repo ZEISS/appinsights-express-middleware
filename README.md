@@ -1,6 +1,6 @@
 # Express Middleware for Microsoft Application Insights
 
-A simple middleware for exposing [Microsoft Application Insights](https://azure.microsoft.com/services/application-insights/) in your [Express](http://expressjs.com/) application.
+A simple middleware for exposing [Microsoft Application Insights](https://azure.microsoft.com/services/application-insights/) in your [Express](http://expressjs.com/) application. :rocket:
 
 ## Getting started
 
@@ -8,9 +8,9 @@ A simple middleware for exposing [Microsoft Application Insights](https://azure.
 
 ## Example Usage
 
-For setting up logging in your application you need to import the `logger` function and pass your application as the first parameter and your Application Insights key in the option object as the second parameter.
+For setting up logging in your application you need to import the `logger` function and pass your application as the first parameter and your Application Insights key in the option object as the second parameter. If no explicit key is given then `process.env.APPINSIGHTS_INSTRUMENTATIONKEY` will be tried.
 
-```
+```js
 import * as express from 'express';
 import { logger } from 'appinsights-express-middleware';
 
@@ -24,7 +24,7 @@ app.listen(3000, () => {
 
 For tracking errors you need to import the middleware explictly and pass it to express after all other `app.use()` and route calls.
 
-```
+```js
 import * as express from 'express';
 import * as bodyParser from 'body-parser'
 import { logError } from 'appinsights-express-middleware';
@@ -44,7 +44,7 @@ With this setup Express will log every request and track every error and send it
 ### Logging during a request
 After you set up the logger it is available through the `res` object.
 
-```
+```js
 import * as express from 'express';
 import { logger } from 'appinsights-express-middleware';
 
@@ -71,7 +71,8 @@ Keep in mind that the `requestId` is not required, it is provided as a convenien
 Logging can also be done outside the HTTP Request context. For that use the `app.locals.logger` object:
 
 #### app.js
-```
+
+```js
 import * as express from 'express';
 import { logger } from 'appinsights-express-middleware';
 
@@ -85,7 +86,8 @@ app.listen(3000, () => {
 ```
 
 #### server.js
-```
+
+````js
 import { app } from './app';
 import * as http from 'http';
 
@@ -107,7 +109,7 @@ server.on('listening', listeningHandler);
 
 ## Logging API
 
-```
+````typescript
 traceInfo(message: string, properties?: {[key: string]: string}): void;
 traceError(error: Error, message: string, properties?: {[key: string]: string}): void;
 traceWarning(message: string, properties?: {[key: string]: string}): void;

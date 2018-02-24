@@ -3,13 +3,14 @@ import * as express from 'express';
 import * as uuid from 'uuid';
 import { Logger } from './logger';
 
-export interface Options {
-  key: string;
+export interface AppInsightsExpressOptions {
+  key?: string;
   disableAutoCollect?: boolean;
 }
 
-export const logger = (app: express.Application, options: Options) => {
-  const ai = appInsights.setup(options.key);
+export const logger = (app: express.Application, options?: AppInsightsExpressOptions = {}) => {
+  const key = options.key || process.env.APPINSIGHTS_INSTRUMENTATIONKEY || '';
+  const ai = appInsights.setup(key);
 
   if (options.disableAutoCollect) {
     ai

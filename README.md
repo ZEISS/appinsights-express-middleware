@@ -1,5 +1,9 @@
 # Express Middleware for Microsoft Application Insights
 
+[![Build Status](https://img.shields.io/travis/ZEISS/appinsights-express-middleware/master.svg?style=flat-square)](https://travis-ci.org/ZEISS/appinsights-express-middleware)
+[![npm](https://img.shields.io/npm/v/appinsights-express-middleware.svg?style=flat-square)](https://www.npmjs.com/package/appinsights-express-middleware)
+[![GitHub issues](https://img.shields.io/github/issues/ZEISS/appinsights-express-middleware.svg?style=flat-square)](https://github.com/ZEISS/appinsights-express-middleware/issues)
+
 A simple middleware for exposing [Microsoft Application Insights](https://azure.microsoft.com/services/application-insights/) in your [Express](http://expressjs.com/) application. :rocket:
 
 ## Getting started

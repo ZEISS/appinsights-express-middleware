@@ -8,8 +8,8 @@ export interface AppInsightsExpressOptions {
   disableAutoCollect?: boolean;
 }
 
-export const logger = (app: express.Application, options?: AppInsightsExpressOptions = {}) => {
-  const key = options.key || process.env.APPINSIGHTS_INSTRUMENTATIONKEY || '';
+export const logger = (app: express.Application, options?: AppInsightsExpressOptions) => {
+  const key = options && options.key ? options.key : process.env.APPINSIGHTS_INSTRUMENTATIONKEY || '';
   const ai = appInsights.setup(key);
 
   if (options.disableAutoCollect) {

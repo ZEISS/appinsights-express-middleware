@@ -1,6 +1,6 @@
 {
   "name": "appinsights-express-middleware",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Middleware for handling Microsoft Application Insights inside an express application.",
   "author": "Kristof Dreier",
   "license": "MIT",

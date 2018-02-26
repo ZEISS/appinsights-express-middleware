@@ -1,4 +1,4 @@
-import { logger, logRequest } from '../index';
+import { logger, logRequest } from '../src';
 import * as express from 'express';
 import * as ai from 'applicationinsights';
 

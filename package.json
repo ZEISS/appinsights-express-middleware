@@ -11,10 +11,10 @@
   "main": "dist",
   "types": "dist",
   "scripts": {
-    "test": "yarn lint && yarn test:unit",
-    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "test": "yarn test:unit",
+    "lint": "tslint -c tslint.json '(src|test)/**/*.ts'",
     "build": "rimraf dist && tsc",
-    "test:unit": "cross-env NODE_ENV=test jest src",
+    "test:unit": "cross-env NODE_ENV=test jest test",
     "test:watch": "yarn test:unit -- --watch"
   },
   "lint-staged": {

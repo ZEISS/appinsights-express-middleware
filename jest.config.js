@@ -3,6 +3,6 @@ module.exports = {
   transform: {
     '^.+\\.ts$': './node_modules/ts-jest/preprocessor.js',
   },
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(js|ts)$',
+  testRegex: '(/test/.*|(\\.|/)(test|spec))\\.(js|ts)$',
   moduleFileExtensions: ['ts', 'js', 'json'],
 };

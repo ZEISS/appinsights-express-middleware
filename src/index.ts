@@ -13,8 +13,7 @@ export const logger = (app: express.Application, options?: AppInsightsExpressOpt
   const ai = appInsights.setup(key);
 
   if (options.disableAutoCollect) {
-    ai
-      .setAutoCollectPerformance(false)
+    ai.setAutoCollectPerformance(false)
       .setAutoCollectConsole(false)
       .setAutoCollectRequests(false)
       .setAutoCollectExceptions(false);

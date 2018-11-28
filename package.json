@@ -14,6 +14,7 @@
     "test": "npm run lint && npm run test:unit",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "build": "rimraf dist && tsc",
+    "prettier": "prettier --config prettier.config.js --write 'src/**/*.{ts,tsx}'",
     "test:unit": "cross-env NODE_ENV=test jest src",
     "test:watch": "npm run test:unit -- --watch"
   },
